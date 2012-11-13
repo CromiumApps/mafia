@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical">  
+    <ImageView 
+        android:id="@+id/titleimage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/android" /> 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_new" 
+        android:onClick="NavigateNewGame"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_option" 
+        android:onClick="NavigateOptions"
+        android:layout_gravity="center"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_exit" 
+        android:onClick="NavigateExit"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
