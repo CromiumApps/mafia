@@ -1,18 +1,19 @@
 package com.example.mafia;
 
 public class DataPasser {
+//Fill this class with dummy data
 	
-	public void passMafia(Player killed)
+	public void sendPlayerKilledByMafia(Player killed)
 	{
 		
 	}
 	
-	public void passMilkman(Player given, int milkType)
+	public void sendPlayerGivenMilk(Player given, int milkType)
 	{
 		
 	}
 	
-	public void passDetective(Player choice)
+	public void sendPlayerDetected(Player choice)
 	{
 		
 	}
@@ -22,9 +23,20 @@ public class DataPasser {
 		
 	}
 	
+	//gets the user's player from the database
+	public Player getMyPlayer()
+	{
+		Player MyPlayer =new Player();
+		//fake data here
+		MyPlayer.setType(1);
+		MyPlayer.setName("Habeeb Ahmed");
+
+		return MyPlayer;
+	}
+	
 	public RoundData getNarrationData()
 	{
-		RoundData data;
+		RoundData data=null;
 		// Get data from database
 		return data;
 	}

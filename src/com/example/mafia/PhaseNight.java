@@ -4,9 +4,9 @@ public class PhaseNight {
 	DataPasser DataPasser = new DataPasser();
 	
 	
-	public void startPhase(Player p)
+	public void startPhase(Player MyPlayer)
 	{
-		switch (p.getType())
+		switch (MyPlayer.getType())
 		{
 			case 0:
 				civilianPhase();
@@ -28,30 +28,38 @@ public class PhaseNight {
 	
 	private void civilianPhase()
 	{
-		// shows stuff, but you don't do anything
+		// Narrates stuff, but you don't do anything
 	}
 	
 	private void mafiaPhase()
 	{
-		// Do mafia stuff
-		DataPasser.passMafia(Player killed);
+		Player PlayerKilledByMafia=new Player();
+		//program voting stuff
+		
+		DataPasser.sendPlayerKilledByMafia(PlayerKilledByMafia);
 	}
 	
 	private void milkmanPhase()
 	{
-		// Milkman stuff
-		DataPasser.passMilkman(Player given, int milkType)
+		Player playerGivenMilk= new Player();
+		int milktype=0;
+		//program milk giving stuff here
+		
+		DataPasser.sendPlayerGivenMilk(playerGivenMilk, milktype);
 	}
 	
 	private void detectivePhase()
 	{
-		// Detective choices
-		DataPasser.passDetective(Player choice);
+		Player playerDetected=new Player();
+		// program Detective choices
+		
+		DataPasser.sendPlayerDetected(playerDetected);
 	}
 	
 	private void doctorPhase()
 	{
-		// Doctor choices
-		DataPasser.passDoctor(Player saved);
+		Player playerSaved=new Player();
+		// program Doctor choices
+		DataPasser.passDoctor(playerSaved);
 	}
 }

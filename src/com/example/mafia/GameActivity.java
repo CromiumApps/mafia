@@ -10,7 +10,7 @@ public class GameActivity extends Activity {
     PhaseMorning pMorning = new PhaseMorning();
     PhaseAfternoon pAfternoon = new PhaseAfternoon();
     PhaseEvening pEvening = new PhaseEvening();
-    
+    DataPasser dataPasser=new DataPasser();
     @Override
     public void onCreate(Bundle savedInstanceState) 
     {
@@ -29,18 +29,20 @@ public class GameActivity extends Activity {
     private Player getPlayer()
     {
     	Player p = new Player();
+    	p=dataPasser.getMyPlayer();
     	return p;
     }
     
     private void mainGameLoop()
     {	
-    	Player p = getPlayer();
+    	Player MyPlayer = getPlayer();
     	while(true)
     	{
-    		pNight.startPhase(p);
-    		pMorning.startPhase(p);
+    		pNight.startPhase(MyPlayer);
+    		pMorning.startPhase(MyPlayer);
     		pAfternoon.startPhase();
-    		pEvening.startPhase(p);		
+    		pEvening.startPhase(MyPlayer);		
+    		
     	}
     	// run end game
     }
