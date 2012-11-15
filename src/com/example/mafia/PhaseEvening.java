@@ -9,7 +9,7 @@ public class PhaseEvening {
 		dataPasser.sendVote(getVote());
 		
 		//wait until all players have voted
-		while(votesCompleted()==false)
+		while(isVotesCompleted()==false)
 		{
 			//loop and wait...
 		}
@@ -17,7 +17,7 @@ public class PhaseEvening {
 		displayResult();
 	}
 	
-	private boolean votesCompleted()
+	private boolean isVotesCompleted()
 	{
 		boolean isVoteCompleted=false;
 		

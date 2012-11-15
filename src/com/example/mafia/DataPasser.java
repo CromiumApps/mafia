@@ -80,6 +80,33 @@ public class DataPasser {
 		
 		return isVotesCompleted;
 	}
+
+	public boolean getNightDataEntrygCompletedStatus() {
+		boolean NightDataEntrygCompleted=false;
+		//check if night data entry is completed using database
+		//fake data
+		NightDataEntrygCompleted=true;
+		
+		return NightDataEntrygCompleted;
+	}
+
+	public boolean getDrinkingCompletedStatus() {
+		boolean DrinkingCompleted=false;
+		//check if drinking is completed using database
+		//fake data
+		DrinkingCompleted=true;
+		
+		return DrinkingCompleted;
+	}
+
+	public boolean getNarrationCompletedStatus() {
+		boolean NarrationCompleted=false;
+		//check if Narration Completed is completed using database
+		//fake data
+		NarrationCompleted=true;
+		
+		return NarrationCompleted;
+	}
 	
 	
 }

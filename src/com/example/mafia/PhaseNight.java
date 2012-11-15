@@ -3,7 +3,7 @@ package com.example.mafia;
 public class PhaseNight {
 	//this class is used for the night activities
 	
-	DataPasser DataPasser = new DataPasser();
+	DataPasser dataPasser = new DataPasser();
 	
 	
 	public void startPhase(Player MyPlayer)
@@ -26,6 +26,21 @@ public class PhaseNight {
 				doctorPhase();
 				break;
 		}
+		
+		while(isNightDataEntryCompleted()==false)
+		{
+			//loop and wait for everyone else to be done with the night actions
+		}
+		
+	}
+	
+	private boolean isNightDataEntryCompleted()
+	{
+		boolean isNightDataEntryCompleted=false;
+		
+		isNightDataEntryCompleted = dataPasser.getNightDataEntrygCompletedStatus();
+		
+		return isNightDataEntryCompleted;
 	}
 	
 	private void civilianPhase()
@@ -38,7 +53,7 @@ public class PhaseNight {
 		Player PlayerKilledByMafia=new Player();
 		//program voting stuff
 		
-		DataPasser.sendPlayerKilledByMafia(PlayerKilledByMafia);
+		dataPasser.sendPlayerKilledByMafia(PlayerKilledByMafia);
 	}
 	
 	private void milkmanPhase()
@@ -47,7 +62,7 @@ public class PhaseNight {
 		int milktype=0;
 		//program milk giving stuff here
 		
-		DataPasser.sendPlayerGivenMilk(playerGivenMilk, milktype);
+		dataPasser.sendPlayerGivenMilk(playerGivenMilk, milktype);
 	}
 	
 	private void detectivePhase()
@@ -55,7 +70,7 @@ public class PhaseNight {
 		Player playerDetected=new Player();
 		// program Detective choices
 		
-		DataPasser.sendPlayerDetected(playerDetected);
+		dataPasser.sendPlayerDetected(playerDetected);
 	}
 	
 	private void doctorPhase()
@@ -63,6 +78,6 @@ public class PhaseNight {
 		Player playerSaved=new Player();
 		// program Doctor choices
 		
-		DataPasser.sendPlayerSaved(playerSaved);
+		dataPasser.sendPlayerSaved(playerSaved);
 	}
 }

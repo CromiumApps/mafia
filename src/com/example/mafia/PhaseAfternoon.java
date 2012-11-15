@@ -9,5 +9,20 @@ public class PhaseAfternoon {
 	public void startPhase()
 	{
 		narrator.NarrateRound(dataPasser.getRoundNarrationData());
+		
+		while(isNarrationCompleted()==false)
+		{
+			//loop and wait for everyone else to be done with the narration
+		}
 	}
+	
+	private boolean isNarrationCompleted()
+	{
+		boolean isNarrationCompleted=false;
+		
+		isNarrationCompleted = dataPasser.getNarrationCompletedStatus();
+		
+		return isNarrationCompleted;
+	}
+	
 }
