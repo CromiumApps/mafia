@@ -2,7 +2,7 @@ package com.example.mafia;
 
 public class Narrator {
 	
-	public void Narrate(RoundData data)
+	public void NarrateRound(RoundData data)
 	{
 		// Narrates based on data
 	}

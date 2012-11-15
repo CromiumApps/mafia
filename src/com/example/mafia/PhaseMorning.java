@@ -1,19 +1,20 @@
 package com.example.mafia;
 
 public class PhaseMorning {
-	
-	public void startPhase(Player p)
+	//this class is used for checking wether or not the person given the milk will drink or not
+	public void startPhase(Player MyPlayer)
 	{
-		if(p == DataPasser.getMilkmanChoice())
+		DataPasser dataPasser=new DataPasser();
+		if(MyPlayer==dataPasser.getMilkmanChoice())
 		{
-			boolean drankMilk;
+			boolean drankMilk=true;
 			// Choose to open it or not
+			
+			dataPasser.sendMilkConsumedStatus( drankMilk);
 		}
 		else
 		{
-			// Narration
-		}
-		
-		DataPasser.passMilkmanOutcome(boolean drankMilk);
+			// Narration of whether or not the chosen player is drinking the milk
+		}		
 	}
 }

@@ -1,6 +1,8 @@
 package com.example.mafia;
 
 public class PhaseNight {
+	//this class is used for the night activities
+	
 	DataPasser DataPasser = new DataPasser();
 	
 	
@@ -60,6 +62,7 @@ public class PhaseNight {
 	{
 		Player playerSaved=new Player();
 		// program Doctor choices
-		DataPasser.passDoctor(playerSaved);
+		
+		DataPasser.sendPlayerSaved(playerSaved);
 	}
 }
