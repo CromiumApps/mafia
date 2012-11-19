@@ -10,7 +10,7 @@ public class GameActivity extends Activity {
     PhaseAfternoon pAfternoon = new PhaseAfternoon();
     PhaseEvening pEvening = new PhaseEvening();
 
-    DataPasser dataPasser=new DataPasser();
+    DataPasser dataPasser = new DataPasser();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,3 +43,4 @@ public class GameActivity extends Activity {
 	// After narrator runs end game, clean up
     }
 }
+
