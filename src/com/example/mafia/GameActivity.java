@@ -39,8 +39,7 @@ public class GameActivity extends Activity {
     		pAfternoon.startPhase();
     		pEvening.startPhase(MyPlayer);
     	}
-    	// run end game
+    	
+	// After narrator runs end game, clean up
     }
 }
-
-
