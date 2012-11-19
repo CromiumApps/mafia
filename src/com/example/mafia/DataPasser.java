@@ -81,6 +81,10 @@ public class DataPasser {
 		return isVotesCompleted;
 	}
 
+	public void sendDataEntryCompleted() {
+		// send 'I'm done' to database
+	}
+
 	public boolean getNightDataEntrygCompletedStatus() {
 		boolean NightDataEntrygCompleted=false;
 		//check if night data entry is completed using database
