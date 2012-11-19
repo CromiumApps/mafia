@@ -10,9 +10,9 @@ public class Player {
 	{
 		ID=id;
 	}
+	
 	public int getID()
-	{
-		
+	{	
 		return ID;
 	}
 	
@@ -20,9 +20,9 @@ public class Player {
 	{
 		name=n;
 	}
+	
 	public String getName()
-	{
-		
+	{	
 		return name;
 	}
 	
@@ -30,6 +30,7 @@ public class Player {
 	{
 		type=t;
 	}
+	
 	public int getType()
 	{
 		
