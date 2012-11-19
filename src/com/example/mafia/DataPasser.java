@@ -1,3 +1,5 @@
+// Please include a function isGameOver() which returns 0 for no, 1 for civilians win, 2 for mafia win
+
 package com.example.mafia;
 
 public class DataPasser {

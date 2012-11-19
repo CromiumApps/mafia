@@ -1,3 +1,5 @@
+// will be passed a function isGameOver(). 1 means civilians win, 2 means mafia wins
+
 package com.example.mafia;
 
 public class Narrator {

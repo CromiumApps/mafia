@@ -1,3 +1,5 @@
+// Please include a check to dataPasser.isGameOver(). 0 -> no, 1 -> civilians win, 2 -> mafia wins. Pass this to narrator
+
 package com.example.mafia;
 
 public class PhaseEvening {
