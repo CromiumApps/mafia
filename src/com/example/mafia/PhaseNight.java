@@ -12,7 +12,7 @@ public class PhaseNight {
 		{
 			case 0:
 				civilianPhase();
-				break; // Civilian's do nothing during this phase
+				break; // Civilians do nothing during this phase
 			case 1:
 				mafiaPhase();
 				break;
@@ -27,6 +27,8 @@ public class PhaseNight {
 				break;
 		}
 		
+		dataPasser.sendDataEntryCompleted();
+
 		while(isNightDataEntryCompleted()==false)
 		{
 			//loop and wait for everyone else to be done with the night actions
