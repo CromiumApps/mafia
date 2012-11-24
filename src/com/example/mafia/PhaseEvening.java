@@ -14,7 +14,6 @@ public class PhaseEvening {
 		}
 
 		narrator.narrateVote(dataPasser.getVoteResult());
-		// May need an isGameOver check. See Narrator.narrateVote()
 
 		return;
 	}

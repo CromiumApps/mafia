@@ -33,14 +33,12 @@ public class GameActivity extends Activity {
     
     private void mainGameLoop() {	
     	Player myPlayer = getPlayer();
-    	while(!dataPasser.isGameOver()) {
+    	while(true) {
     		pNight.startPhase(myPlayer);
     		pMorning.startPhase(myPlayer);
     		pAfternoon.startPhase();
     		pEvening.startPhase();
     	}
-    	
-	// After narrator runs end game, clean up. Check Narrator as to where this code should be
     }
 }
 

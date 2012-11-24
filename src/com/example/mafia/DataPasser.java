@@ -11,6 +11,7 @@ public class DataPasser {
 		
 	}
 	
+	// FIX THIS BY REMOVING
 	public void sendPlayerDetected(Player choice) {
 		
 	}
@@ -33,6 +34,15 @@ public class DataPasser {
 
 	public void sendRoundNarrationCompleted() {
 		// Send "I've read this" to database
+	}
+
+	public int getNumberOfPlayersByID(int id) {
+		int num;
+
+		// return the number of players with a given ID
+			num = 3;
+
+		return num;
 	}
 
 
@@ -62,6 +72,14 @@ public class DataPasser {
 		// Get Player milkmanChoice from database
 		
 		return milkmanChoice;
+	}
+
+	public Player getDoctor() {
+		Player doctor = new Player();
+
+		// Get Player doctor from database
+
+		return doctor;
 	}
 
 	public RoundData getRoundNarrationData() {
@@ -124,8 +142,8 @@ public class DataPasser {
 
 	// Game state
 	public int isGameOver() {
-		if(/* civilian win conditons */) return 1;
-		if(/* mafia win conditions */) return 2;
-		else return 0;
+		if(getNumberOfPlayersByID(1) == 0) return 1; // Civilians win
+		if(getNumberOfPlayersByID(0) == 0 && getNumberOfPlayersByID(2) == 0 && getNumberOfPlayersByID(3) == 0 && getNumberOfPlayersByID(4) == 0) return 2; // Mafia wins
+		else return 0; // No one won... yet
 	}
 }
