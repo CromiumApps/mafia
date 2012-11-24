@@ -24,7 +24,7 @@ public class DataPasser {
 		
 	}
 	
-	public void sendVote(int ID) {
+	public void sendVote(int type) {
 		// Sends vote to database, which will count them and return (via getVoteResult()) the winner.... er, loser.
 	}
 
@@ -33,13 +33,13 @@ public class DataPasser {
 	}
 
 	public void sendRoundNarrationCompleted() {
-		// Send "I've read this" to database
+		// Send "I've read this" to database. May want to also send ID
 	}
 
-	public int getNumberOfPlayersByID(int id) {
+	public int getNumberOfPlayersByID(int type) {
 		int num;
 
-		// return the number of players with a given ID
+		// return the number of players with a given type
 			num = 3;
 
 		return num;
@@ -50,20 +50,21 @@ public class DataPasser {
 	public Player getMyPlayer() {
 		Player myPlayer = new Player();
 		
-		// Get int ID and String name from database
-		myPlayer.setID(int ID);
-		myPlayer.setName(String name);
+		// Get int type and String name from database
+		myPlayer.getID(int id);
+		myPlayer.getName(String name);
+		myPlayer.getType(int type);
 
 		return myPlayer;
 	}
 
 	public int getPlayerInfo(Player detected) {
-		int ID;
+		int type;
 
 		// This line needs to access the database
-		ID = detected.ID;
+		type = detected.type;
 
-		return ID;
+		return type;
 	}
 
 	public Player getMilkmanChoice() {
@@ -142,8 +143,8 @@ public class DataPasser {
 
 	// Game state
 	public int isGameOver() {
-		if(getNumberOfPlayersByID(1) == 0) return 1; // Civilians win
-		if(getNumberOfPlayersByID(0) == 0 && getNumberOfPlayersByID(2) == 0 && getNumberOfPlayersByID(3) == 0 && getNumberOfPlayersByID(4) == 0) return 2; // Mafia wins
+		if(getNumberOfPlayersByType(1) == 0) return 1; // Civilians win
+		if(getNumberOfPlayersByType(0) == 0 && getNumberOfPlayersByType(2) == 0 && getNumberOfPlayersByType(3) == 0 && getNumberOfPlayersByType(4) == 0) return 2; // Mafia wins
 		else return 0; // No one won... yet
 	}
 }
