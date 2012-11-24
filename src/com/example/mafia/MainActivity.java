@@ -37,13 +37,13 @@ public class MainActivity extends Activity {
 
     	TranslateAnimation anim = new TranslateAnimation(CAMERA_WIDTH, 0, 0, 0);
     	anim.setRepeatCount(0);
-	anim.setDuration(700);
+	    anim.setDuration(700);
 
     	// Start animating the image
-   	 final ImageView title = (ImageView) findViewById(R.id.titleimage);
+   	    final ImageView title = (ImageView) findViewById(R.id.titleimage);
         title.startAnimation(anim);
 
-        // Later.. stop the animation
+        // Later... stop the animation
     } 
 
     @Override
