@@ -11,11 +11,6 @@ public class DataPasser {
 		
 	}
 	
-	// FIX THIS BY REMOVING
-	public void sendPlayerDetected(Player choice) {
-		
-	}
-	
 	public void sendPlayerSaved(Player saved) {
 		
 	}
