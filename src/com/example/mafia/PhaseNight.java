@@ -1,18 +1,13 @@
 package com.example.mafia;
 
 public class PhaseNight {
-	//this class is used for the night activities
-	
 	DataPasser dataPasser = new DataPasser();
 	
-	
-	public void startPhase(Player MyPlayer)
-	{
-		switch (MyPlayer.getType())
-		{
+	public void startPhase(Player MyPlayer) {
+		switch (MyPlayer.getType()) {
 			case 0:
 				civilianPhase();
-				break; // Civilians do nothing during this phase
+				break;
 			case 1:
 				mafiaPhase();
 				break;
@@ -28,58 +23,70 @@ public class PhaseNight {
 		}
 		
 		dataPasser.sendDataEntryCompleted();
+		// We may want to restructure this class slightly to avoid the civilians' waiting
 
-		while(isNightDataEntryCompleted()==false)
-		{
-			//loop and wait for everyone else to be done with the night actions
+		while(isNightDataEntryCompleted() == false) {
+			// Do nothing. We may want to replace this with a timer, or at the very least add a timer to this function so so we don't have a shit-ton of calls per second.
 		}
-		
+
+		return;
 	}
 	
-	private boolean isNightDataEntryCompleted()
-	{
-		boolean isNightDataEntryCompleted=false;
+	private boolean isNightDataEntryCompleted() {
+		boolean isNightDataEntryCompleted = false;
 		
-		isNightDataEntryCompleted = dataPasser.getNightDataEntrygCompletedStatus();
+		isNightDataEntryCompleted = dataPasser.getNightDataEntryCompletedStatus();
 		
 		return isNightDataEntryCompleted;
 	}
 	
-	private void civilianPhase()
-	{
-		// Narrates stuff, but you don't do anything
+	private void civilianPhase() {
+		// Does nothing, just waits. We may want to add visual timers or something
 	}
 	
-	private void mafiaPhase()
-	{
-		Player PlayerKilledByMafia=new Player();
-		//program voting stuff
+	private void mafiaPhase() {
+		Player playerKilledByMafia = new Player();
 		
-		dataPasser.sendPlayerKilledByMafia(PlayerKilledByMafia);
+		// Based on UI, accept player input for character choice
+		// PlayerKilledByMafia = your choice
+		// Because there are two mafia, we need some sort of collaborative voting method...
+	
+		dataPasser.sendPlayerKilledByMafia(playerKilledByMafia);
 	}
 	
-	private void milkmanPhase()
-	{
-		Player playerGivenMilk= new Player();
-		int milktype=0;
-		//program milk giving stuff here
-		
-		dataPasser.sendPlayerGivenMilk(playerGivenMilk, milktype);
+	private void milkmanPhase() {
+		Player playerGivenMilk = new Player();
+		int milkType;
+
+		// Based on UI, accept player input for choice of milkType
+		// if(good) milkType = 0 else milkType = 1;
+		// Based on UI, accept player input for character choice of player
+		// playerGivenMilk = your choice
+
+		dataPasser.sendPlayerGivenMilk(playerGivenMilk, milkType);
 	}
 	
-	private void detectivePhase()
-	{
-		Player playerDetected=new Player();
-		// program Detective choices
-		
-		dataPasser.sendPlayerDetected(playerDetected);
+	private void detectivePhase() {
+		Narrator narrator = new Narrator();
+		Player playerDetected = new Player();
+
+		// Based on UI, accept player input for character choice
+		// playerDetected = your choice
+		narrator.sequentialPrint("This player is ");
+		if(dataPasser.getPlayerInfo(playerDetected) == 1) narrator.sequentialPrint("one of the mafia.");
+		else if(dataPasser.getPlayerInfo(playerDetected) == 2) narrator.sequentialPrint("the milkman.");
+		else if(dataPasser.getPlayerInfo(playerDetected) == 4) narrator.sequentialPrint("the doctor.");
+		else narrator.sequentialPrint("a civilian.");
+		// Obviously, the detective shouldn't be able to select himself.
 	}
 	
 	private void doctorPhase()
 	{
-		Player playerSaved=new Player();
-		// program Doctor choices
-		
+		Player playerSaved = new Player();
+
+		// Based on UI, accept player input for character choice
+		// playerSaved = your choice		
+	
 		dataPasser.sendPlayerSaved(playerSaved);
 	}
 }

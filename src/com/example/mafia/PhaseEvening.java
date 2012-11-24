@@ -3,43 +3,34 @@
 package com.example.mafia;
 
 public class PhaseEvening {
-	DataPasser dataPasser=new DataPasser();
+	DataPasser dataPasser = new DataPasser();
+	Narrator narrator = new Narrator();
 	
-	public void startPhase(Player p)
-	{
-		// get the votes
+	public void startPhase() {
 		dataPasser.sendVote(getVote());
 		
-		//wait until all players have voted
-		while(isVotesCompleted()==false)
-		{
-			//loop and wait...
+		while(!isVoteCompleted()) {
+			// Do nothing until everyone has voted. A timer would be a good idea here
 		}
-		//display the results
-		displayResult();
+
+		narrator.narrateVote(dataPasser.getVoteResult());
+		// May need an isGameOver check. See Narrator.narrateVote()
+
+		return;
 	}
 	
-	private boolean isVotesCompleted()
-	{
-		boolean isVoteCompleted=false;
+	private boolean isVoteCompleted() {
+		boolean isVoteCompleted = false;
 		
-		isVoteCompleted = dataPasser.getVotesCompletedStatus();
+		isVoteCompleted = dataPasser.getVoteCompletedStatus();
 		
 		return isVoteCompleted;
 	}
 
-	private int getVote()
-	{
-		// Get's your vote and returns it as the ID of the player you chose
-		Player playerVotedOn=new Player();
+	private int getVote() {
+		// Based on UI, chose someone to vote off the island
+		Player playerVotedOn = new Player();
 		
 		return playerVotedOn.getID();
 	}
-	
-	private void displayResult()
-	{
-		int resultID = dataPasser.getVoteResult();
-		
-	}
-	
 }

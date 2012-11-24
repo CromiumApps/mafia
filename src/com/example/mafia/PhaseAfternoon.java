@@ -1,19 +1,19 @@
 package com.example.mafia;
 
 public class PhaseAfternoon {
-	//this class is used to narrate the data collected during the night and morning
+	// This is when everyone finds out what happened last night (ie, the Narrator uses RoundData to explain everything)
 	
-	DataPasser dataPasser=new DataPasser();
+	DataPasser dataPasser = new DataPasser();
 	Narrator narrator = new Narrator();
 	
-	public void startPhase()
-	{
-		narrator.NarrateRound(dataPasser.getRoundNarrationData());
+	public void startPhase() {
+		narrator.narrateRound(dataPasser.getRoundNarrationData());
 		
-		while(isNarrationCompleted()==false)
-		{
-			//loop and wait for everyone else to be done with the narration
+		while(!isNarrationCompleted()) {
+			// Do nothing until everyone has read the narration. A timer to avoid infinite function calls would be a good idea.
 		}
+
+		return;
 	}
 	
 	private boolean isNarrationCompleted()

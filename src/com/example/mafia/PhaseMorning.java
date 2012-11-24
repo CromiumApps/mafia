@@ -1,36 +1,33 @@
 package com.example.mafia;
 
 public class PhaseMorning {
-	//this class is used for checking wether or not the person given the milk will drink or not
+	// This is when the player who received milk decides to drink it or not
+
 	DataPasser dataPasser = new DataPasser();
 	
-	public void startPhase(Player MyPlayer)
-	{
-		DataPasser dataPasser=new DataPasser();
-		if(MyPlayer==dataPasser.getMilkmanChoice())
-		{
-			boolean drankMilk=true;
-			// Choose to open it or not
+	public void startPhase(Player myPlayer) {
+		DataPasser dataPasser = new DataPasser();
+		
+		if(myPlayer == dataPasser.getMilkmanChoice()) {
+			// Based on UI, accept player choice of yes/no
+			boolean drankMilk = true; // false if the choice was no... obviously
 			
-			dataPasser.sendMilkConsumedStatus( drankMilk);
+			dataPasser.sendMilkConsumedStatus(drankMilk);
 		}
-		else
-		{
-			// Narration of whether or not the chosen player is drinking the milk
-			
-			while(isMilkDrinkingCompleted()==false)
-			{
-				//loop and wait...for player to drink milk
+		else {
+			while(!isMilkDrinkingChosen()) {
+				// Do nothing until player has chosen to drink the milk or not. Check on a timer so there aren't billions of function calls?
 			}
-		}		
+		}
+
+		return;
 	}
 	
-	private boolean isMilkDrinkingCompleted()
-	{
-		boolean isMilkDrinkingCompleted=false;
+	private boolean isMilkDrinkingChosen() {
+		boolean isMilkDrinkingChosen = false;
 		
-		isMilkDrinkingCompleted = dataPasser.getDrinkingCompletedStatus();
+		isMilkDrinkingChosen = dataPasser.getDrinkingCompletedStatus();
 		
-		return isMilkDrinkingCompleted;
+		return isMilkDrinkingChosen;
 	}
 }
