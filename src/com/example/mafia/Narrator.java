@@ -3,14 +3,9 @@ import java.util.Random;
 
 public class Narrator {
 	public void narrateRound(RoundData data) {
-		//data.killed
-		//data.saved
-		//data.givenMilk
-		//data.milkGood
-		//data.drankMilk
-
 		Random random = new Random();
 		int n, m;
+
 		if(data.drankMilk) {
 			if(data.milkGood) {
 				if(data.givenMilk == data.killed) {
@@ -131,6 +126,6 @@ public class Narrator {
 	}
 	
 	private void sequentialPrint(String print) {
-		// Prints in a scrolling fashion
+		// Based on UI, prints in a scrolling fashion to the text box
 	}
 }

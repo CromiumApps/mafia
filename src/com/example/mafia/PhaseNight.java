@@ -6,8 +6,7 @@ public class PhaseNight {
 	public void startPhase(Player MyPlayer) {
 		switch (MyPlayer.getType()) {
 			case 0:
-				civilianPhase();
-				break;
+				break; // Civilians do nothing during this phase
 			case 1:
 				mafiaPhase();
 				break;
@@ -23,7 +22,6 @@ public class PhaseNight {
 		}
 		
 		dataPasser.sendDataEntryCompleted();
-		// We may want to restructure this class slightly to avoid the civilians' waiting
 
 		while(isNightDataEntryCompleted() == false) {
 			// Do nothing. We may want to replace this with a timer, or at the very least add a timer to this function so so we don't have a shit-ton of calls per second.
@@ -38,10 +36,6 @@ public class PhaseNight {
 		isNightDataEntryCompleted = dataPasser.getNightDataEntryCompletedStatus();
 		
 		return isNightDataEntryCompleted;
-	}
-	
-	private void civilianPhase() {
-		// Does nothing, just waits. We may want to add visual timers or something
 	}
 	
 	private void mafiaPhase() {
