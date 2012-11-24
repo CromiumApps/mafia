@@ -23,7 +23,7 @@ public class Narrator {
 					Random random = new Random();
 					random.nextInt(n);
 
-					sequentialPrint(data.killed.getName() + savedByTheMilk[n]);
+					sequentialPrint(data.killed.getName() + savedByTheMilk[random]);
 
 					return;
 				}
@@ -38,7 +38,7 @@ public class Narrator {
 					Random random = new Random();
 					random.nextInt(n);
 
-					sequentialPrint(data.givenMilk + badMilk[n]);
+					sequentialPrint(data.givenMilk + badMilk[random]);
 
 					break;
 				}
@@ -51,7 +51,7 @@ public class Narrator {
 					Random random = new Random();
 					random.nextInt(n);
 
-					sequentialPrint(data.givenMilk + badMilkGoodDoctor[n]);
+					sequentialPrint(data.givenMilk + badMilkGoodDoctor[random]);
 
 					break;
 				}
@@ -67,7 +67,7 @@ public class Narrator {
 			Random random = new Random();
 			random.nextInt(n);
 
-			sequentialPrint(data.killed + luckyDoctor[n]);
+			sequentialPrint(data.killed + luckyDoctor[random]);
 
 			return;
 		}
@@ -79,7 +79,7 @@ public class Narrator {
 			Random random = new Random();
 			random.nextInt(n);
 
-			sequentialPrint(data.killed + unluckyVictim[n]);
+			sequentialPrint(data.killed + unluckyVictim[random]);
 
 			return;
 		}
@@ -87,16 +87,36 @@ public class Narrator {
 
 	public void narrateVote(int votedOut) {
 		// Uses sequentialPrint to print a vote status message
-		// Should include a check to see whether isGameOver() != 0, or this cgiould be done during PhaseEvening
+		// Should include a check to see whether isGameOver() != 0, or this could be done during PhaseEvening
 	}
 
 	public void narrateEnding(int whoWon) {
 		if(whoWon == 1) {
-			// Civilians won, use sequentialPrint to print a random civilian endgame
+			int n = 1;
+			weKillTheKillers = new String[n];
+
+			weKillTheKillers[0] = "The sun rose over a new day. The streets were clean, the sky bright, and people had stopped dying for no apparent reason. Throughout the city, people rejoiced, for the mafia were dead. Congratulations, civilian!";
+
+			Random random = new Random();
+			random.nextInt(n);
+
+			sequentialPrint(weKillTheKillers[random]);
+
+			return;
 		}
 
 		if(whoWon == 2) {
-			// Mafia won, use sequentialPrint to print a random mafia endgame
+			int n = 1;
+			idiotPlebeians = new String[n];
+
+			idiotPlebeians[0] = "The city is yours, cleansed of all the civilians you could find. Of course, now there are no doctors, firemen, public service workers... other people... But, anyway, you accomplished what you set out to do, so congratulations!";
+
+			Random random = new Random();
+			random.nextInt(n);
+
+			sequentialPrint(idiotPlebeians[random]);
+
+			return;
 		}
 
 		// Show stats? Return to main menu. Check GameActivity as to where this code should be
