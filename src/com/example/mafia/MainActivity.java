@@ -1,15 +1,5 @@
 package com.example.mafia;
 
-import com.skiller.api.listeners.SKListenerInterface;
-import com.skiller.api.operations.SKApplication;
-import com.skiller.api.operations.SKUIManager.eScreenType;
-import com.skiller.api.responses.SKFeeChosenResponse;
-import com.skiller.api.responses.SKStatusResponse;
-import com.skiller.api.responses.SKTurnbasedGameChosenResponse;
-import com.skiller.api.responses.SKStatusResponse.eResponseStatus;
-import com.skiller.examples.tictactoe.BoardActivity;
-import com.skiller.examples.tictactoe.GameManager;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Point;
@@ -21,6 +11,14 @@ import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.skiller.api.listeners.SKListenerInterface;
+import com.skiller.api.operations.SKApplication;
+import com.skiller.api.operations.SKUIManager.eScreenType;
+import com.skiller.api.responses.SKFeeChosenResponse;
+import com.skiller.api.responses.SKStatusResponse;
+import com.skiller.api.responses.SKStatusResponse.eResponseStatus;
+import com.skiller.api.responses.SKTurnbasedGameChosenResponse;
 
 public class MainActivity extends Activity {
 	
@@ -59,11 +57,11 @@ public class MainActivity extends Activity {
         // Later... stop the animation
         
         //Skiller SDK
-        String applicationId = "508880754889"; //Insert your application id here
-        String applicationKey = "29902c00327d40edb323dd3126edadf6"; //Insert your application key here
-        String applicationSecret = "c9b377b1dc8f4713b2924866d8392791"; //Insert your application secret here
-        String applicationVersion = "1"; //Insert your application version here
-	int    distributorId = 7; //Insert your application distributor here (7 = Play - Android Market)
+        String applicationId = "710101323765"; //Application id
+        String applicationKey = "b83474545f294ed19854afa020817ede"; //Application key
+        String applicationSecret = "f1b37c50b0ba469e878ec1a5f8b5117d"; //Application secret
+        String applicationVersion = "1"; //Application version here
+	int distributorId = 7; //Application distributor here (7 = Play - Android Market)
         
 	// initialize the application
 	SKApplication.getInstance().init(mContext, applicationId,
@@ -106,7 +104,7 @@ public class MainActivity extends Activity {
 				String gameSettings = ""; //You may add game settings that will be passed to both users at the beginning of the game 
 				GameManager.getInstance().createGame(response.getFee(), gameDescription, gameSettings);
 				
-				Intent intent = new Intent(mContext, BoardActivity.class);
+				Intent intent = new Intent(mContext, GameActivity.class);
 				mContext.startActivity(intent);
 			}
 
@@ -135,7 +133,7 @@ public class MainActivity extends Activity {
 		{
 			GameManager.getInstance().joinGame(response.getGameId());
 			
-			Intent intent = new Intent(mContext, BoardActivity.class);
+			Intent intent = new Intent(mContext, GameActivity.class);
 			mContext.startActivity(intent);
 		}
 
