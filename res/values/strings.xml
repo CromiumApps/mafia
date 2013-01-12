@@ -13,5 +13,10 @@
     <string name="title_activity_game">Game</string>
     <string name="title_activity_options">Options</string>
     <string name="title_activity_dummy">Dummy</string>
+    <string name="button_join">Join Game</string>
+    <string name="button_ranking">Ranking</string>
+    <string name="button_achievements">Achievements</string>
+    <string name="button_getcoins">Get Coins</string>
+    <string name="button_gosocial">Go Social</string>
 
 </resources>

@@ -6,6 +6,28 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
+    <!-- Enables connection with Skiller servers for SDK services -->
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <!-- Enables SDK to check network info and availability -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <!-- Enables SDK to check WIFI network and availability -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <!-- Enables SDK to identify and properly login your user -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <!--
+Allows your users to virally distribute your application (send your game link to their friends) using the platform AND maximizing 
+your revenues by enabling your users to pay by SMS for your game items and other virtual goods in the store
+    -->
+    <uses-permission android:name="android.permission.SEND_SMS" >
+    </uses-permission>
+    <!-- IT IS NOT A PERMISSION – Allow Android market to display your application for Android enabled devices without telephony capabilities -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -37,6 +59,21 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.skiller.deviceSpecific.ui.screens.SKUIView"
+            android:configChanges="orientation"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.skiller.deviceSpecific.ui.screens.SKAnchorActivity"
+            android:configChanges="orientation"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.skiller.deviceSpecific.ui.screens.SKRootAnchorActivity"
+            android:configChanges="orientation"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
         </activity>
     </application>
 

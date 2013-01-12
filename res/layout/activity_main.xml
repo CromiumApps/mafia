@@ -1,32 +1,79 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:orientation="vertical">  
-    <ImageView 
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
         android:id="@+id/titleimage"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/android" /> 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_new" 
-        android:onClick="NavigateNewGame"
+        android:layout_width="89dp"
+        android:layout_height="68dp"
         android:layout_gravity="center"
-        />
-    <Button
-        android:layout_width="fill_parent"
+        android:src="@drawable/android" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_option" 
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:onClick="NavigateNewGame"
+            android:text="@string/button_new" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:onClick="NavigateJoinGame"
+            android:text="@string/button_join" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:onClick="NavigateRanking"
+        android:text="@string/button_ranking" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:onClick="NavigateAchievements"
+        android:text="@string/button_achievements" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:onClick="NavigateGetCoins"
+        android:text="@string/button_getcoins" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:onClick="NavigateGoSocial"
+        android:text="@string/button_gosocial" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
         android:onClick="NavigateOptions"
-        android:layout_gravity="center"/>
+        android:text="@string/button_option" />
+
     <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_exit" 
-        android:onClick="NavigateExit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_gravity="center"
-        />
+        android:onClick="NavigateExit"
+        android:text="@string/button_exit" />
 
 </LinearLayout>

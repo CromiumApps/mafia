@@ -51,18 +51,18 @@ public class DataPasser {
 		Player myPlayer = new Player();
 		
 		// Get int type and String name from database
-		myPlayer.getID(int id);
-		myPlayer.getName(String name);
-		myPlayer.getType(int type);
+		//myPlayer.getID(int id);
+		//myPlayer.getName(String name);
+		//myPlayer.getType(int type);
 
 		return myPlayer;
 	}
 
 	public int getPlayerInfo(Player detected) {
-		int type;
+		int type = 0;
 
 		// This line needs to access the database
-		type = detected.type;
+		//type = detected.type;
 
 		return type;
 	}
@@ -140,7 +140,12 @@ public class DataPasser {
 		return isRoundComplete;
 	}
 
-
+	public int getNumberOfPlayersByType(int type) {
+	    
+	    return 0;
+	}
+	
+	
 	// Game state
 	public int isGameOver() {
 		if(getNumberOfPlayersByType(1) == 0) return 1; // Civilians win

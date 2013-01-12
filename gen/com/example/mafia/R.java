@@ -36,9 +36,14 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f040000;
+        public static final int button_achievements=0x7f04000f;
         public static final int button_exit=0x7f040006;
+        public static final int button_getcoins=0x7f040010;
+        public static final int button_gosocial=0x7f040011;
+        public static final int button_join=0x7f04000d;
         public static final int button_new=0x7f040004;
         public static final int button_option=0x7f040005;
+        public static final int button_ranking=0x7f04000e;
         public static final int dummytext=0x7f040008;
         public static final int edit_message=0x7f040003;
         public static final int hello_world=0x7f040007;
