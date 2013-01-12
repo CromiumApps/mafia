@@ -17,7 +17,7 @@ public class Player {
 		type = t;
 	}
 
-	public void getID(int i) {
+	public int getID() {
 		return id;
 	}
 	

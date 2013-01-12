@@ -50,14 +50,14 @@ public class PhaseNight {
 	
 	private void milkmanPhase() {
 		Player playerGivenMilk = new Player();
-		int milkType;
+		int milkType=0;
 
 		// Based on UI, accept player input for choice of milkType
 		// if(good) milkType = 0 else milkType = 1;
 		// Based on UI, accept player input for character choice of player
 		// playerGivenMilk = your choice
 
-		dataPasser.sendPlayerGivenMilk(playerGivenMilk, milkType);
+		dataPasser.sendPlayerGivenMilk(playerGivenMilk, milkType=0);
 	}
 	
 	private void detectivePhase() {

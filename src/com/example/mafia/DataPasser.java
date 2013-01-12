@@ -147,4 +147,9 @@ public class DataPasser {
 		if(getNumberOfPlayersByType(0) == 0 && getNumberOfPlayersByType(2) == 0 && getNumberOfPlayersByType(3) == 0 && getNumberOfPlayersByType(4) == 0) return 2; // Mafia wins
 		else return 0; // No one won... yet
 	}
+
+	public boolean getNarrationCompletedStatus() {
+		// checks if the current narration is completed
+		return false;
+	}
 }
